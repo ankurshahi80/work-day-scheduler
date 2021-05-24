@@ -18,7 +18,8 @@ var loadTasks = function() {
 // Audit the hour-blocks
 // Get the current time using Moment js
 // Format the time to include the hour only
-var currentTime=moment().format("H");
+var currentTime=moment().format("H"); // comment out to test audit after 17:00 hrs
+// var currentTime=12; remove the comment to test audit
 currentTime=Math.abs(currentTime);
 
 var auditHours = function() {
