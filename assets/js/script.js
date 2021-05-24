@@ -46,3 +46,35 @@ var descBlockArray = $(".description").toArray();
 
 // Repeat audit every minute
 setInterval(auditHours(),(1000*60));
+
+// Save the text in local storage
+
+$(".saveBtn").on("click", function() {
+    // get row text field class and row id values
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    console.log(value,time);
+    // save in localStorage
+    
+    localStorage.setItem(time, value);
+});
+
+var loadTasks = function() {
+    var descBlockArray = $(".description").toArray();
+
+    $.each(descBlockArray,function(){
+        
+        // capture the parent id
+        var parentRowId = $(this).parent().attr("id");
+
+        // look for the key with the parent id
+        var task = localStorage.getItem(parentRowId);
+        console.log(task);
+
+        // log the task in the corresponding textarea
+        $(this).val(task);
+        
+    });
+}
+
+loadTasks();
