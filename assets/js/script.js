@@ -7,14 +7,6 @@ var formattedDate=moment().format("dddd, MMM Do");
 // assign the formattedDate to id=currentDay
 $("#currentDay").text(formattedDate);
 
-var loadTasks = function() {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-    // if nothting in localStorage, create a new object to track all tasks
-
-    if(!tasks) {
-        tasks
-    }
-}
 // Audit the hour-blocks
 // Get the current time using Moment js
 // Format the time to include the hour only
